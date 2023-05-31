@@ -58,13 +58,14 @@ body {
   border-inline-end: 1px solid #171b26;
 }
 
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .game-wrapper {
     width: 90vmin;
     height: 115vmin;
+    margin-block: 1em;
   }
   .game-details {
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 2em 2.5em;
   }
   .controls {
@@ -72,6 +73,6 @@ body {
   }
   .controls i {
     padding: 15px 0;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
