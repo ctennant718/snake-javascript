@@ -1,3 +1,77 @@
 body {
   font-family: monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: hsl(205, 87%, 94%);
+  color: hsl(0, 0%, 0%);
+  font-size: 2rem;
+}
+
+.game-wrapper {
+  width: 65vmin;
+  height: 70vmin;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  background-color: hsl(210, 57%, 78%);
+  border-radius: 0.5em;
+  /* box-shadow: 0 20px 40px hsl(210, 57%, 78%, 0.1) */
+}
+
+.game-details {
+  font-weight: bold;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.play-area {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background-color: hsl(226, 47%, 77%);
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.play-area .food {
+  background-color: hsl(120, 61%, 34%);
+}
+
+.play-area .head {
+  background-color: hsl(0, 0%, 0%);
+}
+
+.controls {
+  display: none;
+  justify-content: space-between;
+}
+
+.controls i {
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  width: calc(100% / 4);
+  cursor: pointer;
+  border-inline-end: 1px solid #171b26;
+}
+
+@media (max-width: 800px) {
+  .game-wrapper {
+    width: 90vmin;
+    height: 115vmin;
+  }
+  .game-details {
+    font-size: 1rem;
+    padding: 2em 2.5em;
+  }
+  .controls {
+    display: flex;
+  }
+  .controls i {
+    padding: 15px 0;
+    font-size: 1rem;
+  }
 }
