@@ -45,8 +45,8 @@ body {
 }
 
 .controls {
-  display: none;
-  justify-content: space-between;
+  display: flex;
+  /* justify-content: space-between; */
 }
 
 .controls i {
