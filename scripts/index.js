@@ -3,6 +3,7 @@ const playArea = document.querySelector(".play-area");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
 const controls = document.querySelectorAll(".controls i");
+const playAgainButton = document.querySelector(".play-again-button");
 
 //initial variables set
 let gameOver = false;
@@ -23,27 +24,32 @@ highScoreElement.innerText = `High Score: ${highScore}`;
 const updateFoodPosition = () => {
   foodX = Math.floor(Math.random() * 30) + 1;
   foodY = Math.floor(Math.random() * 30) + 1;
-}
+};
 
 //handle game over
 const handleGameOver = () => {
   clearInterval(setIntervalId);
   alert("Game over! Press OK to replay!");
   location.reload();
-}
+};
+
+const handleRefreshGame = () => {
+  clearInterval(setIntervalId);
+  location.reload();
+};
 
 // change velocity value based on key presses
 const changeDirection = (e) => {
-  if (e.key === "arrowUp" && velocityY != 1) {
+  if (e.key === "ArrowUp" && velocityY != 1) {
     velocityX = 0;
     velocityY = -1;
-  } else if (e.key === "arrowDown" && velocityY != -1) {
+  } else if (e.key === "ArrowDown" && velocityY != -1) {
     velocityX = 0;
     velocityY = 1;
-  } else if (e.key === "arrowLeft" && velocityX != 1) {
+  } else if (e.key === "ArrowLeft" && velocityX != 1) {
     velocityX = -1;
     velocityY = 0;
-  } else if (e.key === "arrowRight" && velocityX != -1) {
+  } else if (e.key === "ArrowRight" && velocityX != -1) {
     velocityX = 1;
     velocityY = 0;
   }
@@ -94,4 +100,5 @@ const startGame = () => {
 
 updateFoodPosition();
 setIntervalId = setInterval(startGame, 100);
-document.addEventListener("keyup", changeDirection);
+document.addEventListener("keydown", changeDirection);
+playAgainButton.addEventListener("click", handleRefreshGame);
