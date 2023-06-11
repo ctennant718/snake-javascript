@@ -60,7 +60,7 @@ i:nth-child(5) {
   border-inline-end: none;
 }
 
-@media screen and (max-width: 800px) {
+@media (max-width: 800px) {
   .game-wrapper {
     width: 90vmin;
     height: 115vmin;
@@ -76,5 +76,22 @@ i:nth-child(5) {
   .controls i {
     padding: 15px 0;
     font-size: 1.5rem;
+  }
+}
+
+@media(max-width: 475px) {
+  .play-again-button {
+    font-size: 2.5rem;
+  }
+}
+
+@media(min-width: 375px ) and (max-width: 475px) {
+  .game-details {
+    font-size: 1.5rem;
+    padding: 1em 1em;
+  }
+
+  .play-again-button {
+    font-size: 1.25rem;
   }
 }
